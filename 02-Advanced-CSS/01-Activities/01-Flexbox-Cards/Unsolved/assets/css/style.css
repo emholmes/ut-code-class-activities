@@ -35,6 +35,9 @@ main h2 {
 
 .flex-container {
   /* TODO: Enter your CSS here */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* flex child */
@@ -63,11 +66,17 @@ main h2 {
   /* rather than using position, use flexbox and create columns instead of rows 
   TODO: Enter your CSS here.
   */
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
 }
 
 /* for text area inside of flex item */
 .flex-item span {
   /* TODO: Enter your CSS here */
+  background-color: #a8adba;
+  text-align: center;
 }
 
 footer {
