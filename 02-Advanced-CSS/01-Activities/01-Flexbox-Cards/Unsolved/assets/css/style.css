@@ -68,7 +68,7 @@ main h2 {
   */
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 
 }
 
@@ -77,6 +77,8 @@ main h2 {
   /* TODO: Enter your CSS here */
   background-color: #a8adba;
   text-align: center;
+  width: 100%;
+  padding: 5px 0;
 }
 
 footer {
