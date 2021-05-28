@@ -15,7 +15,24 @@ function countdown() {
     //
     // YOUR CODE HERE
     //
-  });
+    if (timeLeft >= 1){
+      mainEl.textContent = "";
+      timerEl.textContent = timeLeft + " seconds remaining.";
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      timerEl.textContent = timeLeft + " second remaining";
+      timeleft--;
+    } else {
+      timerEl.textContent = "";
+      clearInterval(timeInterval);
+      displayMessage();
+      // debugger;
+      setInterval(function() {
+        mainEl.style.display = "none";
+      }, 5000);
+      
+    }
+  }, 1000);
 }
 
 // Displays the message one word at a time
