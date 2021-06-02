@@ -8,6 +8,7 @@
   <body>
     <h1>Click to Eat Sandwich</h1>
     <!-- Create three button elements each with an id and corresponding content for our sandwiches -->
+    
 
     <!-- BONUS: Render an image for each click event. You will need to declare an empty `<div>` with an id of `#image-div` for this -->
 
@@ -17,9 +18,20 @@
     <script type="text/javascript">
       // Create three global variables for tracking the number of sandwiches eaten
       //
+      var grilledCheeseCount = 0;
+      var peanutButterCount = 0;
+      var chickenSaladCount = 0;
       // YOUR CODE HERE
       //
-
+      var grilledCheeseButton = $("<button>").attr("id", "grilled-cheese").attr("type", "button").text("Grilled Cheese");
+      var peanutButterButton = $("<button>").attr("id", "peanut-butter").attr("type", "button").text("Peanut Butter");
+      var chickenSaladButton = $("<button>").attr("id", "chicken-salad").attr("type", "button").text("Chicken Salad");
+      $("body").append(grilledCheeseButton);
+      $("body").append(peanutButterButton);
+      $("body").append(chickenSaladButton);
+      
+      var imageDiv = $("<div>").attr("id", "image-div");
+      $("body").append(imageDiv);
       // Here we create various "on click" events which capture clicks
       // Inside each click event is the code to create an alert, update the counter, and show the updated count.
       // Take note that you can chain events onto an element
@@ -27,6 +39,31 @@
       //
       // YOUR CODE HERE
       //
+      $("body").on("click", "button", function() {
+        var buttonId = $(this).attr("id");
+        switch (buttonId) {
+          case "grilled-cheese":
+            alert("Oh yummm! A melted grilled cheese!");
+            $("#image-div").html("<img width=20% src='./assets/images/grilled-cheese-sandwich-pic-480x480.jpeg'>");
+            grilledCheeseCount++;
+            alert("You've eaten " + grilledCheeseCount + " grilled cheese sandwiches.");
+            break;
+          case "peanut-butter":
+            alert("Peanut butter sandwich with no jelly!?");
+            $("#image-div").html("<img width=20% src='./assets/images/peanut-butter-sandie.jpeg'>");
+            peanutButterCount++;
+            alert("You've eaten " + peanutButterCount + " peanut butter sandwiches.");
+            break;
+          case "chicken-salad":
+            alert("I hope you're not lactose intolerant!");
+            $("#image-div").html("<img width=20% src='./assets/images/chicken-salad-sandie.jpeg'>");
+            chickenSaladCount++;
+            alert("You've eaten " + chickenSaladCount + " chicken salad sandwiches.");
+            break;
+          default: 
+            break;
+        }
+      });
     </script>
   </body>
 </html>
