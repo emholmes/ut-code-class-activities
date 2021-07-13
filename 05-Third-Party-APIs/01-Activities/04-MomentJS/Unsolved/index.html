@@ -12,33 +12,48 @@
     <script src="https://code.jquery.com/jquery.js"></script>
 
     <!-- Import Moment.js here -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script>
       var randomDate = '02/23/1999';
-      // Convert the `randomDate` to the "MM/DD/YYYY" format using `moment()`
+      // Convert the `randomDate` to the "MM/DD/YY" format using `moment()`
       //
+      var convertedDate = moment(randomDate).format("MM/DD/YY");
       // Log `convertedDate` into the console
       //
-      console.log('----------------------------------------');
+      console.log(convertedDate);
 
       // Convert `convertedDate` into three other date formats of your choice using `.format()`
       // Log them into the console
       //
-      console.log('----------------------------------------');
+      convertedDate = moment(randomDate).format("MMMM D, YYYY");
+      console.log(convertedDate);
 
       // Calculate the time in years, months, days between today and the `convertedDate` using `.toNow()` and `.diff()`
       // Log them into the console
       //
-      console.log('----------------------------------------');
+
+      var years = Math.abs(moment(randomDate).diff(moment(), "years"));
+
+      var months = Math.abs(moment(randomDate).diff(moment(), "months"));
+
+      var days = Math.abs(moment(randomDate).diff(moment(), "days"));
+
+
+      console.log("Years: " + years + "/ Months: " + months + "/ Days: " + days);
 
       // Calculate the number of days between the `convertedDate` and 02/14/2001
       // Log it into the console
       //
-      console.log('----------------------------------------');
+      convertedDate = Math.abs(moment('02/14/2001').diff(moment(), "days"));
+      console.log(convertedDate);
 
       // Determine what day of the week and what week of the year the `convertedDate` falls on
       // Log them into the console
       //
+      convertedDate = moment(randomDate).format("dddd");
+      console.log(convertedDate);
+      convertedDate = moment(randomDate).format("ww");
+      console.log(convertedDate);
     </script>
   </body>
 </html>
